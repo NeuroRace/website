@@ -1,4 +1,4 @@
-import { socialLinks } from "@/components/sections/Community";
+import { socialLinks } from "@/components/sections/Contact";
 
 /** Barra lateral flutuante, sempre visível em telas médias ou maiores. */
 export default function FloatingSocial() {
