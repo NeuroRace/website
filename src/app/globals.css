@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* Design system NeuroRace (Tailwind v4: tokens definidos via @theme) */
+@theme inline {
+  --color-night: #0f1b2d;
+  --color-night-deep: #0b1424;
+  --color-neuro-yellow: #facc15;
+  --color-neuro-cyan: #22d3ee;
+  --color-brain-pink: #e8506e;
+  --color-brain-teal: #2a9d8f;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-night);
+  color: #e2e8f0;
+}
+
+/* Funde a arte do mascote (fundo azul-noite) com o fundo do site */
+.mascot-fade {
+  -webkit-mask-image: radial-gradient(closest-side, #000 62%, transparent 100%);
+  mask-image: radial-gradient(closest-side, #000 62%, transparent 100%);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
