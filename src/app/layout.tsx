@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     type: "website",
     images: ["/mascote/feliz.jpg"],
   },
+  other: {
+    "facebook-domain-verification": "eg670g9zgvxj5ultyq89xc7wd1b0yx",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
