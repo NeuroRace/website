@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Badge from "@/components/ui/Badge";
-import { NAV } from "@/lib/site";
+import { FIAP_NEXT, NAV } from "@/lib/site";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,7 +23,13 @@ export default function Header() {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <a href="#" className="flex items-center gap-2">
-          <Image src="/mascote/feliz.jpg" alt="" width={36} height={36} className="mascot-fade rounded-full" />
+          <Image
+            src="/mascote/feliz.jpg"
+            alt=""
+            width={36}
+            height={36}
+            className="mascot-fade h-9 w-9 rounded-full object-cover"
+          />
           <span className="text-xl font-extrabold tracking-wide text-white">
             NEURO<span className="text-neuro-yellow">RACE</span>
           </span>
@@ -39,7 +45,9 @@ export default function Header() {
             </a>
           ))}
         </nav>
-        <Badge tone="cyan">NEXT FIAP</Badge>
+        <a href={FIAP_NEXT.url} target="_blank" rel="noopener noreferrer">
+          <Badge tone="cyan">{FIAP_NEXT.label} 25/26</Badge>
+        </a>
       </div>
     </header>
   );

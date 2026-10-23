@@ -25,14 +25,14 @@ export default function Hero() {
       <div className="relative mx-auto grid w-full max-w-6xl items-center gap-8 px-4 pt-16 md:grid-cols-2">
         <div className="text-center md:text-left">
           <p className="text-sm font-bold uppercase tracking-[0.3em] text-neuro-cyan">
-            Corrida controlada por ondas cerebrais
+            Duelo de concentração controlado por ondas cerebrais
           </p>
           <h1 className="mt-4 text-4xl font-extrabold uppercase leading-tight tracking-wide text-white sm:text-6xl lg:text-7xl">
             Até onde sua <span className="text-neuro-yellow">mente</span> pode ir?
           </h1>
           <p className="mt-5 max-w-lg text-lg text-slate-200 md:max-w-none">
-            Quanto mais você se concentra, mais rápido você corre. Conheça o projeto que transforma foco em
-            velocidade usando EEG.
+            Dois jogadores, dois sensores de EEG na cabeça: quem mantém o foco faz o mascote andar mais
+            rápido e cruza primeiro a linha de chegada. Selecionado para a Feira FIAP NEXT 2025/2026.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
             <Button href="#trailer" large>
@@ -47,7 +47,7 @@ export default function Hero() {
         <div className="hidden justify-center md:flex">
           <Image
             src="/mascote/feliz.jpg"
-            alt="NeuroBrain, o mascote do NeuroRace, acenando"
+            alt="Mascote cérebro do NeuroRace, acenando"
             width={1600}
             height={1194}
             priority

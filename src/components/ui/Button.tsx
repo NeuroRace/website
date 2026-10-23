@@ -5,11 +5,13 @@ export default function Button({
   children,
   variant = "primary",
   large = false,
+  external = false,
 }: {
   href: string;
   children: ReactNode;
   variant?: "primary" | "ghost";
   large?: boolean;
+  external?: boolean;
 }) {
   const styles =
     variant === "primary"
@@ -19,6 +21,7 @@ export default function Button({
   return (
     <a
       href={href}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       className={`inline-flex items-center justify-center rounded-full border-2 font-extrabold uppercase tracking-wide transition duration-300 ${size} ${styles}`}
     >
       {children}

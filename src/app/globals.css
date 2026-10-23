@@ -41,11 +41,78 @@ body {
   animation: float 5s ease-in-out infinite;
 }
 
+/* Reveal ao rolar: aplicado via src/components/ui/Reveal.tsx */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fundo "aurora": blobs desfocados e lentos, atrás do conteúdo */
+.aurora-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.25;
+  animation: aurora-drift 22s ease-in-out infinite;
+}
+
+@keyframes aurora-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(6%, 8%) scale(1.15);
+  }
+}
+
+/* Medidor de foco decorativo (ConcentrationMeter): anel pulsando entre dois níveis */
+.meter-arc {
+  stroke-dashoffset: calc(var(--circumference) * 0.7);
+  animation: meter-pulse 4s ease-in-out infinite;
+}
+
+@keyframes meter-pulse {
+  0%,
+  100% {
+    stroke-dashoffset: calc(var(--circumference) * 0.7);
+  }
+  50% {
+    stroke-dashoffset: calc(var(--circumference) * 0.12);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-float {
     animation: none;
   }
   html {
     scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .aurora-blob {
+    animation: none;
+  }
+  .meter-arc {
+    animation: none;
+    stroke-dashoffset: calc(var(--circumference) * 0.4);
   }
 }
