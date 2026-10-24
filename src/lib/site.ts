@@ -9,6 +9,12 @@ export const TRAILER = {
   poster: "/mascote/feliz.jpg",
 };
 
+/** Plataforma do jogador (login, ranking e painel). Link direto para a entrada. */
+export const PLATFORM = {
+  url: "https://neurorace-v2.vercel.app/login",
+  label: "Acessar plataforma",
+};
+
 /** ID do vídeo do YouTube exibido na seção Trailer. */
 export const TRAILER_YOUTUBE_ID = "6tIoI1UeUiQ";
 
